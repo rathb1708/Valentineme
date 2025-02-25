@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffe4e6;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background-color: #fff0f3;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #d6336c;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .yes {
+      background-color: #ff6b81;
+      color: white;
+    }
+
+    .yes:hover {
+      background-color: #ff4757;
+    }
+
+    .no {
+      background-color: #f1f1f1;
+      color: #333;
+      position: absolute;
+    }
+
+    .message {
+      display: none;
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      color: #ff6b81;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Will You Be My Valentine? ❤️</h1>
+    <div class="buttons">
+      <button class="yes">Yes</button>
+      <button class="no">No</button>
+    </div>
+    <div class="message">Yay! 🥰 I knew you'd say yes! 💖</div>
+  </div>
+
+  <script>
+    const noButton = document.querySelector('.no');
+    const yesButton = document.querySelector('.yes');
+    const message = document.querySelector('.message');
+
+    noButton.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    });
+
+    yesButton.addEventListener('click', () => {
+      message.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
